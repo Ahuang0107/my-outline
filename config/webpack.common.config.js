@@ -1,21 +1,24 @@
-const path = require('path');
+const path = require("path");
 // eslint-disable-next-line import/no-extraneous-dependencies
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 // eslint-disable-next-line import/no-extraneous-dependencies
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = (isProd) => {
   const rootFolder = process.cwd();
   return {
-    entry: path.join(rootFolder, 'src/demo/index.tsx'),
+    entry: path.join(rootFolder, "src/demo/index.tsx"),
     resolve: {
-      extensions: ['.tsx', '.ts', '.js'],
+      extensions: [".tsx", ".ts", ".js"],
+      alias: {
+        "~": path.join(rootFolder, "src/demo"),
+      },
     },
     module: {
       rules: [
         {
           test: /\.tsx?$/,
-          use: 'ts-loader',
+          use: "ts-loader",
           exclude: /node_modules/,
         },
         {
@@ -34,7 +37,7 @@ module.exports = (isProd) => {
             ...cssLoader(isProd),
             // eslint-disable-next-line @typescript-eslint/no-use-before-define
             ...postcssLoader(isProd),
-            'less-loader',
+            "less-loader",
           ],
         },
         {
@@ -44,21 +47,21 @@ module.exports = (isProd) => {
             ...cssLoader(isProd),
             // eslint-disable-next-line @typescript-eslint/no-use-before-define
             ...postcssLoader(isProd),
-            'sass-loader',
+            "sass-loader",
           ],
         },
         {
           test: /\.(otf|ttf|eot|woff|woff2)$/,
-          type: 'asset/resource',
+          type: "asset/resource",
           generator: {
-            filename: 'fonts/[hash][ext][query]',
+            filename: "fonts/[hash][ext][query]",
           },
         },
         {
           test: /\.(jpg|jpeg|png)$/i,
-          type: 'asset/resource',
+          type: "asset/resource",
           generator: {
-            filename: 'images/[hash][ext][query]',
+            filename: "images/[hash][ext][query]",
           },
         },
       ],
@@ -74,26 +77,24 @@ module.exports = (isProd) => {
                   `,
       }),
       new MiniCssExtractPlugin({
-        filename: 'css/[name].[contenthash:8].css',
-        chunkFilename: 'css/[name].[contenthash:8].chunk.css',
+        filename: "css/[name].[contenthash:8].css",
+        chunkFilename: "css/[name].[contenthash:8].chunk.css",
       }),
     ],
   };
 };
 
 const cssLoader = (isProd) => [
-  isProd ? MiniCssExtractPlugin.loader : 'style-loader',
-  'css-loader',
+  isProd ? MiniCssExtractPlugin.loader : "style-loader",
+  "css-loader",
 ];
 
 const postcssLoader = (isProd) => [
   {
-    loader: 'postcss-loader',
+    loader: "postcss-loader",
     options: {
       postcssOptions: {
-        plugins: [
-          isProd && 'postcss-preset-env',
-        ],
+        plugins: [isProd && "postcss-preset-env"],
       },
     },
   },

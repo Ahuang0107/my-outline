@@ -9,7 +9,7 @@ parserOptions:
 env:
   browser: true
 rules:
-  "prettier/prettier": ["error"]
+  "prettier/prettier": [ "error" ]
   "react/jsx-filename-extension": [ 2, { 'extensions': [ '.js', '.jsx', '.ts', '.tsx' ] } ]
   "react/button-has-type": "off"
   "react/jsx-props-no-spreading": "off"
@@ -17,3 +17,4 @@ rules:
   "react/require-default-props": "off"
   "no-param-reassign": "off"
   "react/function-component-definition": "off"
+  "import/extensions": [ "error",{ "js": "never" } ]

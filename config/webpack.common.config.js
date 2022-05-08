@@ -68,13 +68,7 @@ module.exports = (isProd) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        templateContent: `
-                    <html lang="en-US">
-                      <body>
-                        <div id='react-page'></div>
-                      </body>
-                    </html>
-                  `,
+        template: path.join(rootFolder, "public/index.html"),
       }),
       new MiniCssExtractPlugin({
         filename: "css/[name].[contenthash:8].css",

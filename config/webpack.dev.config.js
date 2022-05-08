@@ -1,8 +1,8 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = () => {
   const rootFolder = process.cwd();
-  const port = 12000;
+  const port = 8000;
   return {
     mode: "development",
     output: {

@@ -5,6 +5,7 @@ import { Router } from "react-router-dom";
 import stores from "~/stores";
 import Routes from "~/routes";
 import history from "./utils/history";
+import GlobalStyles from "~/styles/globals";
 
 const element = window.document.getElementById("react-page");
 
@@ -12,6 +13,7 @@ if (element) {
   const App = () => (
     <React.StrictMode>
       <Provider {...stores}>
+        <GlobalStyles />
         <Router history={history}>
           <Routes />
         </Router>

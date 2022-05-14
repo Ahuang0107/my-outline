@@ -7,6 +7,7 @@ import Fade from "~/components/Fade";
 import Flex from "~/components/Flex";
 import OutlineLogo from "~/components/OutlineLogo";
 import Heading from "~/components/Heading";
+import Button from "~/components/Button";
 
 interface PropsType {
   authStore?: AuthStore;
@@ -23,7 +24,9 @@ function Login(props: PropsType) {
         <Logo>
           <OutlineLogo size={38} fill="currentColor" />
         </Logo>
+        <br />
         <Heading centered>Login to Outline</Heading>
+        <Button onClick={authStore.rehydrate}>Continue Automatically</Button>
       </Centered>
     </Background>
   );

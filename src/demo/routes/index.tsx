@@ -9,7 +9,7 @@ export default function Routes() {
     <React.Suspense fallback={null}>
       <Switch>
         <Route exact path="/" component={Login} />
-        <Route exact path="/home" component={AuthenticatedRoutes} />
+        <AuthenticatedRoutes />
       </Switch>
     </React.Suspense>
   );

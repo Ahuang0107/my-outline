@@ -8,7 +8,7 @@ export default function AuthenticatedRoutes() {
   return (
     <Layout>
       <Switch>
-        <Route path="/" component={Home} />
+        <Route path="/home" component={Home} />
       </Switch>
     </Layout>
   );

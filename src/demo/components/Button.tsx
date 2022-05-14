@@ -1,14 +1,39 @@
 import * as React from "react";
-import { inject, observer } from "mobx-react";
-import { UsersStore } from "~/stores/UsersStore";
+import styled from "styled-components";
 
-interface PropsType {
-  usersStore?: UsersStore;
+type Props = {
+  label?: string;
+};
+
+function Button(props: Props) {
+  const { label } = props;
+  return (
+    <RealButton>
+      <ButtonInner>
+        <ButtonLabel>{label ?? "Button"}</ButtonLabel>
+      </ButtonInner>
+    </RealButton>
+  );
 }
 
-function Button(props: PropsType) {
-  const { usersStore } = props;
-  return <button onClick={usersStore.add}>Add User</button>;
-}
+const ButtonLabel = styled.span``;
 
-export default inject("usersStore")(observer(Button));
+const ButtonInner = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 4px 16px;
+`;
+
+const RealButton = styled.button`
+  height: 40px;
+
+  background: #0366d6;
+
+  &:hover {
+    background: #035abd;
+  }
+`;
+
+export default Button;

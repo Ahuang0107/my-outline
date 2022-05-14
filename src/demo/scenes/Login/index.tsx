@@ -1,20 +1,16 @@
 import * as React from "react";
-import { inject, observer } from "mobx-react";
+import { observer } from "mobx-react";
 import { Redirect } from "react-router";
 import styled from "styled-components";
-import { AuthStore } from "~/stores/AuthStore";
 import Fade from "~/components/Fade";
 import Flex from "~/components/Flex";
 import OutlineLogo from "~/components/OutlineLogo";
 import Heading from "~/components/Heading";
 import Button from "~/components/Button";
+import useStores from "~/hooks/useStores";
 
-interface PropsType {
-  authStore?: AuthStore;
-}
-
-function Login(props: PropsType) {
-  const { authStore } = props;
+function Login() {
+  const { authStore } = useStores();
   if (authStore.authenticated) {
     return <Redirect to="/home" />;
   }
@@ -52,4 +48,4 @@ const Logo = styled.div`
   height: 38px;
 `;
 
-export default inject("authStore")(observer(Login));
+export default observer(Login);

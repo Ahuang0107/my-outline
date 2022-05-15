@@ -6,6 +6,7 @@ import stores from "~/stores";
 import Routes from "~/routes";
 import history from "./utils/history";
 import GlobalStyles from "~/styles/globals";
+import "./font.css";
 
 const element = window.document.getElementById("react-page");
 

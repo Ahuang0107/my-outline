@@ -1,0 +1,188 @@
+@font-face {
+    font-family: Montserrat;
+    src: url("../../public/font/en/Montserrat/Montserrat Thin.otf") format("opentype");
+    font-style: normal;
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("../../public/font/en/Montserrat/Montserrat ExtraLight.otf") format("opentype");
+    font-style: normal;
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("../../public/font/en/Montserrat/Montserrat Light.otf") format("opentype");
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("../../public/font/en/Montserrat/Montserrat Regular.otf") format("opentype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("../../public/font/en/Montserrat/Montserrat Medium.otf") format("opentype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("../../public/font/en/Montserrat/Montserrat SemiBold.otf") format("opentype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("../../public/font/en/Montserrat/Montserrat Bold.otf") format("opentype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("../../public/font/en/Montserrat/Montserrat ExtraBold.otf") format("opentype");
+    font-style: normal;
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("../../public/font/en/Montserrat/Montserrat Black.otf") format("opentype");
+    font-style: normal;
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("../../public/font/en/Montserrat/Montserrat Alternates Thin.otf") format("opentype");
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("../../public/font/en/Montserrat/Montserrat Alternates ExtraLight.otf") format("opentype");
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("../../public/font/en/Montserrat/Montserrat Alternates Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("../../public/font/en/Montserrat/Montserrat Alternates Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("../../public/font/en/Montserrat/Montserrat Alternates Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("../../public/font/en/Montserrat/Montserrat Alternates SemiBold.otf") format("opentype");
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("../../public/font/en/Montserrat/Montserrat Alternates Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("../../public/font/en/Montserrat/Montserrat Alternates ExtraBold.otf") format("opentype");
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("../../public/font/en/Montserrat/Montserrat Alternates Black.otf") format("opentype");
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url("../../public/font/en/Inter/Inter-Thin.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url("../../public/font/en/Inter/Inter-ExtraLight.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url("../../public/font/en/Inter/Inter-Light.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url("../../public/font/en/Inter/Inter-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url("../../public/font/en/Inter/Inter-Medium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url("../../public/font/en/Inter/Inter-SemiBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url("../../public/font/en/Inter/Inter-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url("../../public/font/en/Inter/Inter-ExtraBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url("../../public/font/en/Inter/Inter-Black.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 900;
+}

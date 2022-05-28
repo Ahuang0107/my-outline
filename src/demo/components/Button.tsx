@@ -6,8 +6,15 @@ type Props = {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
 
-const Button = ({ children, onClick = () => {} }: Props) => (
-  <RealButton onClick={onClick}>
+const Button = <T extends React.ElementType = "button">(
+  {
+    children,
+    onClick = () => {},
+    ...rest
+  }: Props & React.ComponentPropsWithoutRef<T>,
+  ref: React.Ref<HTMLButtonElement>
+) => (
+  <RealButton onClick={onClick} ref={ref} {...rest}>
     <ButtonInner>
       <ButtonLabel>{children}</ButtonLabel>
     </ButtonInner>
@@ -54,4 +61,4 @@ const RealButton = styled.button`
   }
 `;
 
-export default Button;
+export default React.forwardRef(Button);

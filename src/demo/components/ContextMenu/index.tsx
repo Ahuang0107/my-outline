@@ -20,7 +20,7 @@ const ContextMenu = ({ children, onOpen, onClose, ...rest }: Props) => {
     <Menu hideOnClickOutside preventBodyScroll {...rest}>
       {(props) => (
         <Position {...props}>
-          <Background>{rest.visible ? children : null}</Background>
+          <Background column>{rest.visible ? children : null}</Background>
         </Position>
       )}
     </Menu>
@@ -35,7 +35,12 @@ const Position = styled.div`
 `;
 
 const Background = styled(Flex)`
+  transform-origin: 50% 100%;
+  max-width: 100%;
   border-radius: 6px;
   padding: 6px 0;
-  background: wheat;
+  min-width: 180px;
+  background: white;
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 2%), 0 4px 8px rgb(0 0 0 / 8%),
+    0 2px 4px rgb(0 0 0 / 0%), 0 30px 40px rgb(0 0 0 / 8%);
 `;

@@ -3,15 +3,18 @@ import { MenuButton, useMenuState } from "reakit";
 import styled from "styled-components";
 import Button from "~/components/Button";
 import ContextMenu from "~/components/ContextMenu";
+import Template from "~/components/ContextMenu/Template";
+import { MenuItemDto } from "~/types";
 
-type Props = {
-  children?: React.ReactNode;
-};
-
-const NewDocumentMenu = ({ children }: Props) => {
+const NewDocumentMenu = () => {
   const menu = useMenuState({
     modal: true,
   });
+  const items: MenuItemDto[] = ["Collection-01", "Collection-02"].map(
+    (item) => ({
+      title: <CollectionName>{item}</CollectionName>,
+    })
+  );
   return (
     <>
       <MenuButton {...menu}>
@@ -19,6 +22,7 @@ const NewDocumentMenu = ({ children }: Props) => {
       </MenuButton>
       <ContextMenu {...menu} aria-label="New Document">
         <Header>Choose a collection</Header>
+        <Template {...menu} items={items} />
       </ContextMenu>
     </>
   );
@@ -28,9 +32,15 @@ export default NewDocumentMenu;
 
 const Header = styled.h3`
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
-  color: green;
+  color: rgb(78, 92, 110);
   letter-spacing: 0.04em;
   margin: 1em 12px 0.5em;
+`;
+
+const CollectionName = styled.div`
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Flex from "~/components/Flex";
+import Flex from "~/components/base/Flex";
 
 export const Action = styled(Flex)`
   justify-content: center;

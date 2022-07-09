@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import Flex from "~/components/Flex";
+import Flex from "~/components/base/Flex";
 
 type Props = {
   actions?: React.ReactNode;

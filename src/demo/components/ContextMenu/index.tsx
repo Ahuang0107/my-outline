@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Menu } from "reakit";
 import styled from "styled-components";
-import Flex from "~/components/Flex";
+import Flex from "~/components/base/Flex";
 
 type Props = {
   "aria-label": string;

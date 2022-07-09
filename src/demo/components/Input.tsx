@@ -1,55 +1,29 @@
 import * as React from "react";
-import { action, makeObservable, observable } from "mobx";
 import styled from "styled-components";
 import { observer } from "mobx-react";
-import Flex from "~/components/Flex";
+import { useState } from "react";
+import Flex from "~/components/base/Flex";
 
 type Props = {
   icon?: React.ReactNode;
+  placeholder?: string;
 };
 
-class Input extends React.Component<Props> {
-  // eslint-disable-next-line react/no-unused-class-component-methods
-  focused: boolean = false;
-
-  constructor(props) {
-    super(props);
-    makeObservable(this, {
-      focused: observable,
-      handleBlur: action,
-      handleFocus: action,
-    });
-  }
-
-  handleBlur = () => {
-    // eslint-disable-next-line react/no-unused-class-component-methods
-    this.focused = false;
-  };
-
-  handleFocus = () => {
-    // eslint-disable-next-line react/no-unused-class-component-methods
-    this.focused = true;
-  };
-
-  render() {
-    const { icon } = this.props;
-    return (
-      <Wrapper>
-        {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-        <label>
-          <Outline focused={this.focused}>
-            {icon && <IconWrapper>{icon}</IconWrapper>}
-            <RealInput
-              onBlur={this.handleBlur}
-              onFocus={this.handleFocus}
-              placeholder="Search..."
-            />
-          </Outline>
-        </label>
-      </Wrapper>
-    );
-  }
-}
+const Input = ({ icon, ...rest }: Props) => {
+  const [focused, setFocused] = useState(false);
+  return (
+    <Wrapper>
+      <Outline focused={focused}>
+        {icon && <IconWrapper>{icon}</IconWrapper>}
+        <RealInput
+          onBlur={() => setFocused(false)}
+          onFocus={() => setFocused(true)}
+          {...rest}
+        />
+      </Outline>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.div`
   flex: 1;

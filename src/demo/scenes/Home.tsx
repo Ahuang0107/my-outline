@@ -2,15 +2,16 @@ import * as React from "react";
 import { observer } from "mobx-react";
 import Scene from "~/components/Scene";
 import { Action } from "~/components/Action";
-import InputSearchPage from "~/components/InputSearchPage";
 import NewDocumentMenu from "~/menus/NewDocumentMenu";
+import SearchIcon from "~/components/icon/SearchIcon";
+import Input from "~/components/Input";
 
 const Home = () => (
   <Scene
     actions={
       <>
         <Action>
-          <InputSearchPage />
+          <Input icon={<SearchIcon size={16} />} placeholder="Search..." />
         </Action>
         <Action>
           <NewDocumentMenu />

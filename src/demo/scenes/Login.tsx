@@ -3,7 +3,7 @@ import { observer } from "mobx-react";
 import { Redirect } from "react-router";
 import styled from "styled-components";
 import Fade from "~/components/Fade";
-import Flex from "~/components/Flex";
+import Flex from "~/components/base/Flex";
 import OutlineLogo from "~/components/OutlineLogo";
 import Heading from "~/components/Heading";
 import Button from "~/components/Button";

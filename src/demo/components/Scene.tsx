@@ -10,12 +10,24 @@ type Props = {
 const Scene = ({ children, actions }: Props) => (
   <FillWidth>
     <Header actions={actions} />
-    {children}
+    <Container>
+      <Content>{children}</Content>
+    </Container>
   </FillWidth>
 );
 
 const FillWidth = styled.div`
   width: 100%;
+`;
+
+const Container = styled.div`
+  width: 100%;
+  padding: 60px 12px;
+`;
+
+const Content = styled.div`
+  max-width: 46em;
+  margin: 0 auto;
 `;
 
 export default Scene;

@@ -70,6 +70,7 @@
     "not op_mini all"
   ],
   "dependencies": {
+    "framer-motion": "^6.4.3",
     "history": "^4.10.1",
     "mobx": "^6.5.0",
     "mobx-react": "^7.4.0",

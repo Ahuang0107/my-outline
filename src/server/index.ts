@@ -7,6 +7,7 @@ import { AddressInfo } from "net";
 import services from "./services";
 import Logger from "./logging/logger";
 import env from "./env";
+import { sequelize } from "./database/sequelize";
 
 const serviceNames = uniq("web".split(",").map((service) => service.trim()));
 
@@ -44,6 +45,14 @@ async function start() {
       "lifecycle",
       `Listening on http://localhost:${(address as AddressInfo).port}`
     );
+
+    sequelize.databaseVersion().then((v) => {
+      const dbOps = sequelize.options;
+      const cfg = sequelize.config;
+      const dbUrl = `${dbOps.dialect}://@${cfg.host}:${cfg.port}/${cfg.database}`;
+      Logger.info("database", `Database URL ${dbUrl}`);
+      Logger.info("database", `Database Version ${v}`);
+    });
   });
   server.listen(env.PORT || "3000");
 }

@@ -1,0 +1,3 @@
+### health check
+GET /_health HTTP/1.1
+Host: {{host}}:{{port}}

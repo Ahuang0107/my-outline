@@ -1,0 +1,3 @@
+### health check
+POST /api/documents.list HTTP/1.1
+Host: {{host}}:{{port}}

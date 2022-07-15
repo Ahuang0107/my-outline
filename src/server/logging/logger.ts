@@ -2,7 +2,7 @@ import winston from "winston";
 import { isEmpty } from "lodash";
 import chalk from "chalk";
 
-type LogCategory = "lifecycle";
+type LogCategory = "lifecycle" | "http";
 type Extra = Record<string, any>;
 
 class Logger {

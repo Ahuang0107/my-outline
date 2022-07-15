@@ -1,6 +1,7 @@
 import Koa from "koa";
 import http from "http";
 import Router from "koa-router";
+import logger from "koa-logger";
 import { uniq } from "lodash";
 import { AddressInfo } from "net";
 import services from "./services";
@@ -13,6 +14,8 @@ async function start() {
   const app = new Koa();
   const server = http.createServer(app.callback());
   const router = new Router();
+
+  app.use(logger((str) => Logger.info("http", str)));
 
   router.get("/_health", (ctx) => {
     ctx.body = "OK";

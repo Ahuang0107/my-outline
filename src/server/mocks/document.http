@@ -1,3 +1,9 @@
-### health check
+### Documents List
 POST /api/documents.list HTTP/1.1
 Host: {{host}}:{{port}}
+Content-Type: application/json
+
+{
+  "sort": "updatedAt",
+  "direction": "DESC"
+}

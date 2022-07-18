@@ -80,9 +80,12 @@
   ],
   "dependencies": {
     "chalk": "^4.1.0",
+    "es6-error": "^4.1.1",
+    "fetch-retry": "^5.0.3",
     "framer-motion": "^6.4.3",
     "history": "^4.10.1",
     "koa": "^2.13.4",
+    "koa-body": "^5.0.0",
     "koa-logger": "^3.2.1",
     "koa-mount": "^4.0.0",
     "koa-router": "^11.0.1",

@@ -2,6 +2,7 @@ import Router from "koa-router";
 import Koa from "koa";
 import koaBody from "koa-body";
 import documents from "./documents";
+import methodOverride from "../../middlewares/methodOverride";
 
 const api = new Koa();
 const router = new Router();
@@ -14,6 +15,7 @@ api.use(
     },
   })
 );
+api.use(methodOverride());
 
 router.use("/", documents.routes());
 

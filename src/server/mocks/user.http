@@ -1,0 +1,18 @@
+### Users List
+POST /api/users.list HTTP/1.1
+Host: {{host}}:{{port}}
+Content-Type: application/json
+
+{
+  "sort": "updatedAt",
+  "direction": "DESC"
+}
+
+### Users Create
+POST /api/users.create HTTP/1.1
+Host: {{host}}:{{port}}
+Content-Type: application/json
+
+{
+  "email": "elase.huang@outlook.com"
+}

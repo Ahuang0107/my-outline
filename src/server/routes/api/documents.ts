@@ -4,14 +4,20 @@ import { Document } from "../../models";
 const router = new Router();
 
 router.post("documents.list", async (ctx) => {
-  console.log(ctx.request.body);
-  const { sort = "updatedAt", direction = "ASC" } = ctx.request.body;
-  await Document.create({
-    title: "test",
+  const { sort = "updatedAt", direction = "ASC" } = ctx.body;
+  const documents = await Document.findAll({
+    order: [[sort, direction]],
   });
-  const documents = await Document.findAll();
   ctx.body = {
     data: documents,
+  };
+});
+
+router.post("documents.info", async (ctx) => {
+  const { id } = ctx.body;
+  const document = await Document.findByPk(id as string);
+  ctx.body = {
+    data: document,
   };
 });
 

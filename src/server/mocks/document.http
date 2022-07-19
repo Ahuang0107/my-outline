@@ -4,6 +4,15 @@ Host: {{host}}:{{port}}
 Content-Type: application/json
 
 {
-  "sort": "updatedAt",
+  "sort": "title",
   "direction": "DESC"
+}
+
+### Documents Info
+POST /api/documents.info HTTP/1.1
+Host: {{host}}:{{port}}
+Content-Type: application/json
+
+{
+  "id": "9c626e31-ebb8-4f15-8658-0c9a51170473"
 }

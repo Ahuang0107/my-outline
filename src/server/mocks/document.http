@@ -1,5 +1,5 @@
 ### Documents List
-POST /api/documents.list HTTP/1.1
+POST /api/documents.list
 Host: {{host}}:{{port}}
 Content-Type: application/json
 
@@ -9,10 +9,20 @@ Content-Type: application/json
 }
 
 ### Documents Info
-POST /api/documents.info HTTP/1.1
+POST /api/documents.info
 Host: {{host}}:{{port}}
 Content-Type: application/json
 
 {
   "id": "9c626e31-ebb8-4f15-8658-0c9a51170473"
+}
+
+### Documents Create
+POST /api/documents.create
+Host: {{host}}:{{port}}
+Content-Type: application/json
+
+{
+  "title": "Outline Document",
+  "text": "document content"
 }
